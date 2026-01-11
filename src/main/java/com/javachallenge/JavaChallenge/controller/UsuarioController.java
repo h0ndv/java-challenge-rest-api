@@ -38,7 +38,7 @@ public class UsuarioController {
         Usuario usuario = new Usuario();
         usuario.setNombre(usuarioRequest.getNombre());
         usuario.setEmail(usuarioRequest.getEmail());
-        usuario.setContrasena(usuarioRequest.getContrasena());
+        usuario.setPassword(usuarioRequest.getPassword());
 
         // Guardar en la base de datos
         Usuario usuarioGuardado = usuarioRepository.save(usuario);
@@ -87,7 +87,7 @@ public class UsuarioController {
         // Actualizar los datos
         usuario.setNombre(usuarioRequest.getNombre());
         usuario.setEmail(usuarioRequest.getEmail());
-        usuario.setContrasena(usuarioRequest.getContrasena());
+        usuario.setPassword(usuarioRequest.getPassword());
 
         Usuario usuarioActualizado = usuarioRepository.save(usuario);
         return ResponseEntity.ok(usuarioActualizado);
