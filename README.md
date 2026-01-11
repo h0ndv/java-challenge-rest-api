@@ -22,20 +22,25 @@ JavaChallenge/
 │   │   │   └── com/javachallenge/JavaChallenge/
 │   │   │       ├── JavaChallengeApplication.java
 │   │   │       ├── config/
+│   │   │       │   ├── JWTFilter.java
 │   │   │       │   └── SecurityConfig.java
 │   │   │       ├── controller/
+│   │   │       │   ├── LoginController.java
 │   │   │       │   ├── TopicoController.java
 │   │   │       │   └── UsuarioController.java
 │   │   │       ├── dto/
+│   │   │       │   ├── LoginDTO.java
 │   │   │       │   ├── TopicoDTO.java
 │   │   │       │   └── UsuarioDTO.java
 │   │   │       ├── models/
 │   │   │       │   ├── Curso.java
 │   │   │       │   ├── Topico.java
 │   │   │       │   └── Usuario.java
-│   │   │       └── repository/
-│   │   │           ├── TopicoRepository.java
-│   │   │           └── UsuarioRepository.java
+│   │   │       ├── repository/
+│   │   │       │   ├── TopicoRepository.java
+│   │   │       │   └── UsuarioRepository.java
+│   │   │       └── service/
+│   │   │           └── TokenService.java
 │   │   └── resources/
 │   │       ├── application.properties
 │   │       └── db/migration/
@@ -87,6 +92,24 @@ mvn spring-boot:run
 La aplicación estará disponible en: `http://localhost:8080`
 
 ## 📡 Endpoints de la API
+
+### Autenticación
+
+#### Login
+```http
+POST /login
+Content-Type: application/json
+
+{
+  "username": "Seba",
+  "password": "password123"
+}
+```
+
+**Respuesta exitosa:**
+```json
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+```
 
 ### Tópicos
 
